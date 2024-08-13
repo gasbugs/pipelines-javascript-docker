@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: gasbugspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gasbugspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: gasbugspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: gasbugspipelinesjavascriptdocker 
+          image: gasbugsregistry2024.azurecr.io/gasbugspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
